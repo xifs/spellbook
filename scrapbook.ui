@@ -19,7 +19,6 @@
     </columns>
   </object>
   <object class="GtkWindow" id="mainwindow">
-    <property name="visible">True</property>
     <signal name="destroy" handler="do_quit"/>
     <child>
       <object class="GtkVBox" id="mainvbox">
@@ -150,15 +149,8 @@
   </object>
   <object class="GtkAboutDialog" id="about">
     <property name="border_width">5</property>
-    <property name="modal">True</property>
-    <property name="window_position">center-on-parent</property>
     <property name="type_hint">normal</property>
-    <property name="program_name">&#x5929;&#x6A5F;</property>
-    <property name="version">0.1</property>
-    <property name="website">blog.imxifs.info</property>
-    <property name="website_label" translatable="yes">&#x5C0F;&#x6C50;&#x7684;&#x9732;&#x9752;&#x8ED2;</property>
-    <property name="license" translatable="yes">MIT</property>
-    <property name="authors">vehicle lee &lt;imxifs@gmail.com&gt;</property>
+    <property name="program_name">Glade</property>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox2">
         <property name="visible">True</property>
@@ -197,7 +189,7 @@
             <property name="model">liststore</property>
             <child>
               <object class="GtkTreeViewColumn" id="wizard_treeviewcolumn">
-                <property name="title">&#x5DF2;&#x67E5;&#x627E;&#x5230;&#x7684;&#x6587;&#x6A94;&#x5EAB;</property>
+                <property name="title">column</property>
                 <child>
                   <object class="GtkCellRendererText" id="cellrenderertext"/>
                   <attributes>
