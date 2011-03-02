@@ -19,6 +19,7 @@
     </columns>
   </object>
   <object class="GtkWindow" id="mainwindow">
+    <property name="visible">True</property>
     <signal name="destroy" handler="do_quit"/>
     <child>
       <object class="GtkVBox" id="mainvbox">
@@ -86,6 +87,7 @@
             <property name="can_focus">True</property>
             <child>
               <object class="GtkScrolledWindow" id="tree_sw">
+                <property name="width_request">200</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="hscrollbar_policy">automatic</property>
@@ -150,7 +152,13 @@
   <object class="GtkAboutDialog" id="about">
     <property name="border_width">5</property>
     <property name="type_hint">normal</property>
-    <property name="program_name">Glade</property>
+    <property name="program_name">SpellBook(&#x5929;&#x6A5F;/&#x7405;&#x5B1B;)</property>
+    <property name="version">0.2</property>
+    <property name="website">http://blog.imxifs.info</property>
+    <property name="website_label" translatable="yes">&#x5C0F;&#x6C50;&#x7684;&#x9732;&#x9752;&#x8ED2;</property>
+    <property name="license" translatable="yes">GPL
+MIT</property>
+    <property name="authors">vehicle lee &lt;imxifs@gmail.com&gt;</property>
     <child internal-child="vbox">
       <object class="GtkVBox" id="dialog-vbox2">
         <property name="visible">True</property>

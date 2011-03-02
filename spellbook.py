@@ -13,12 +13,13 @@ class BookGtk():
 	path = ''
 	def __init__(self):
 		self.builder = gtk.Builder()
-		self.builder.add_from_file('scrapbook.ui')
+		self.builder.add_from_file('spellbook.ui')
 		self.builder.connect_signals(self)
 		self.window = self.builder.get_object('mainwindow')
 		self.liststore = self.builder.get_object('liststore')
 		self.treestore = self.builder.get_object('treestore')
 		self.itemlist = self.builder.get_object('itemlist')
+		self.treeviewcolumn = self.builder.get_object('treeviewcolumn1')
 		self.webkit_sw = self.builder.get_object('webkit_sw')
 		self.webview = webkit.WebView()
 		if(1):
@@ -28,7 +29,7 @@ class BookGtk():
 			else:
 				self.show_wizard(self)
 		self.webkit_sw.add(self.webview)
-		self.window.show_all()
+		self.webview.show_all()
 		self.webview.load_html_string('<h1>StandBy</h1>','about:labs')
 
 	def read_config(self):
@@ -91,6 +92,7 @@ class BookGtk():
 			row = self.wizard_treeview.get_selection().get_selected_rows()[1][0]
 			db = self.wizard_treeview.get_model()[row][1]
 			self.chrome_scrapbook(self,db)
+			self.treeviewcolumn.set_title(self.wizard_treeview.get_model()[row][0])
 		self.wizard.hide()
 
 	def chrome_scrapbook(self,widget,db):
